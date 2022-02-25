@@ -1,0 +1,13 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: bhargavachary.yas@sus.edu
+Date: Tue, 15 Feb 2022 19:09:09 -0000
+Message-ID: <164495214976.30744.10461817682327084114@BhaRGava>
+
+Someone asked for password reset for email bhargavachary.yas@sus.edu.Follow the Link below
+http://127.0.0.1:8000{% url "authapp:password_reset_confirm"
+uidb64=uid token=token %}
+-------------------------------------------------------------------------------

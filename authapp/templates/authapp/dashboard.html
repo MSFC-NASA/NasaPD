@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock title %}
+{% block content %}
+<h1>{{welcome}}</h1>
+<br>
+<a href="{% url 'authapp:edit' %}" class="btn btn-primary">Edit Your Profile</a> or
+<a href="{% url 'authapp:password_change' %}" class="btn btn-warning">Change your password</a>
+<hr>
+
+    <script>
+        function Linegraph() {
+            var x = document.getElementById("LineGraph");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } 
+             var x = document.getElementById("Bargraph");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }  
+        }
+        function Bargraph() {
+            var x = document.getElementById("Bargraph");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } 
+             var x = document.getElementById("LineGraph");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }  
+        }
+    </script>
+
+
+    <button class="btn btn-sm btn-primary" onclick="Linegraph()">Show Linegraph</button>
+    <button class="btn btn-sm btn-primary" onclick="Bargraph()">Show Bargraph</button>
+    <div id="LineGraph" style="display: none;">
+        <h1 style="color:orange;">
+            <center> Sensor Data Visualization </center>
+        </h1>
+        <h2> <a href="display_line_graph.html"> View the line graph </a> </h2>
+
+        <div class="row">
+
+            <div id="time" class="column ">
+                <div class="leaderboard-row">
+                    <h2>Sensor 1 </h2>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo1bar.png" %}" alt="home"  style="width:328px;height:328px;"/>
+                    <!-- <img src="/authapp/templates/authapp/foo1bar.png" alt="Sensor 1 data" style="width:328px;height:328px;"> -->
+                </div>
+            </div>
+
+            <div class="column ">
+                <div class="leaderboard-row">
+                    <h2>Sensor 2 </h2>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo2bar.png" %}" alt="home"
+                        style="width:328px;height:328px;" />
+                    <!-- <img src="/authapp/templates/authapp/foo2bar.png" alt="Sensor 2 data" style="width:328px;height:328px;"> -->
+                </div>
+            </div>
+
+            <div class="column ">
+                <div class="leaderboard-row">
+                    <h2>Sensor 3 </h2>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo3bar.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="column ">
+                <div class="leaderboard-row">
+                    <h2>Sensor 4 </h2>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo4bar.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+            <div class="column ">
+                <div class="leaderboard-row">
+                    <h2>Sensor 5 </h2>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo5bar.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+        </div>
+ 
+    </div>
+
+    <div id="Bargraph"  style="display: none;">
+        <div class="row">
+
+            <div class="column ">
+                <div class="leaderboard-row">
+                    <h3> Sensor 1 </h3>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo1.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="leaderboard-row">
+                    <h3>Sensor 2 </h3>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo2.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="leaderboard-row">
+                    <h3>Sensor 3 </h3>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo3.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+            <div class="column">
+                <div class="leaderboard-row">
+                    <h3>Sensor 4 </h3>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo4.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="leaderboard-row">
+                    <h3>Sensor 5 </h3>
+                    {% load static %} <img src="{% static "/authapp/templates/authapp/foo5.png" %}" alt="home"
+                        style="width:328px;height:328px;" /> 
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+{% endblock content %}
